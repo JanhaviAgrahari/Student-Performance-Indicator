@@ -17,7 +17,7 @@ from xgboost import XGBRegressor
 from src.exception import CustomException
 from src.logger import logging
 
-from src.utils import save_object, evaluate_model
+from src.utils import save_object, evaluate_models
 
 
 @dataclass
@@ -51,7 +51,7 @@ class ModelTrainer:
                 "AdaBoost Regressor": AdaBoostRegressor(),
             }
 
-            model_report: dict = evaluate_model(
+            model_report: dict = evaluate_models(
                 X_train, y_train, X_test, y_test, models
             )
 
